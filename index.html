@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>NodeJS Starter Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#check").click(function(){
+		var inputs = $('#value').val();
+		alert(inputs);
+			$.post("/l",{value : inputs},function(responseHTML) {$('#xyz').html(responseHTML);});
+		});
+		$("div").on("click", "input#update", function(){
+		var name = $('#name').val();
+		var pass = $('#pass').val();
+		var revNum = $('#revNum').val();
+		var docId = $('#docId').val();
+		alert(docId);
+			$.post("/update",{name : name, pass : pass, revNum : revNum, docId : docId},function(responseText) {$('#xyz').text(responseText);});
+		});
+		$("#insert").click(function(){
+		var name = $('#uname').val();
+		var pass = $('#pass').val();
+		var docId= $('#email').val();
+		alert(name);
+			$.post("/insert",{uname : name, pass : pass, docId : docId},function(responseHTML) {$('#asd').html(responseHTML);});
+		});
+		$("#delete").click(function(){
+		var docId = $('#deleteId').val();
+		alert(docId);
+			$.post("/delete",{docId : docId},function(responseHTML) {$('#qwe').html(responseHTML);});
+		});
+	});
+	</script>
+  </head>
+
+<body bgcolor="pink">
+<!--<form action="/hello1" method="POST">
+<form action="/update" method="POST">
+<form action="/delete" method="POST">
+
+<h1>Hai laxmi</h1>
+username<input type="text" name="uname"><br>
+password<input type="password" name="pass"><br>
+<input type="submit" value="send"><br>
+</form>-->
+
+<center>
+  <h1><marquee>CURD OPERATIONS</marquee></h1><hr>
+  <h1>To retrive</h1>
+  <input type='text' name='value' id="value" value='mydoc10'><br><br>
+  <input type='button' name='check' id="check" value='Retrive'>
+  <div id="xyz" name="xyz"></div>
+   <h1>To insert</h1>
+  <input type='text' name='uname' id="uname" placeholder="User Name"><br><br>
+   <input type='password' name='pass' id="pass" placeholder="password"><br><br>
+   <input type='email' name='email' id="email" placeholder="email"><br><br>
+  <input type='button' name='insert' id="insert" value='Insert'>
+  <div id="asd" name="asd"></div>
+   <h1>To delete</h1>
+  <input type='text' name='deleteId' id="deleteId" placeholder="User Name"><br><br>
+  <input type='button' name='delete' id="delete" value='Delete'>
+  <div id="qwe" name="qwe"></div>
+  </center>
+</body>
+</html>

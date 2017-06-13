@@ -1,0 +1,23 @@
+{
+  "name": "compose-mongodb-crudApp",
+  "version": "1.0.0",
+  "main": "ExpressToMongo.js",
+  "dependencies": {
+    "nodemon": "^1.11.0",
+	"body-parser": "^1.15.2",
+    "cf-deployment-tracker-client": "*",
+    "cfenv": "^1.0.3",
+    "commander": "^2.6.0",
+    "express": "~4.x",
+    "http-post": "^0.1.1",
+    "http-proxy": "^1.8.1",
+    "mongodb": "^2.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

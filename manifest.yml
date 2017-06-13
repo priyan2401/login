@@ -1,0 +1,7 @@
+---
+applications:
+- name:    compose-mongodb-crudApp
+  host:    compose-mongodb-crudApp
+  memory:  128M
+  services:
+    - my-compose-for-mongodb
